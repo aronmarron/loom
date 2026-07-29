@@ -1,0 +1,21 @@
+# Loom dependencies. Install with:  pip install -r requirements.txt
+# (A virtual environment is recommended — see README.)
+
+streamlit>=1.30
+pandas>=2.0
+numpy>=1.24
+requests>=2.31
+python-dotenv>=1.0
+
+# PDF loading + chunking + web search (LangChain community tools)
+langchain-community>=0.2
+langchain-text-splitters>=0.2
+pypdf>=4.0
+duckduckgo-search>=6.0
+
+# Local embeddings / image analysis use Ollama (external service, not pip).
+# Image analysis path also relies on torch.
+torch>=2.0
+
+# Windows-only: clipboard image paste. Safe to omit on macOS/Linux.
+pywin32>=306 ; sys_platform == "win32"
