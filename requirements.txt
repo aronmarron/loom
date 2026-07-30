@@ -19,3 +19,8 @@ torch>=2.0
 
 # Windows-only: clipboard image paste. Safe to omit on macOS/Linux.
 pywin32>=306 ; sys_platform == "win32"
+
+# Only needed to run sdxl_server.py (the local SDXL image server).
+flask>=3.0
+diffusers>=0.27
+Pillow>=10.0
