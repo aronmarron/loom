@@ -19,7 +19,7 @@ document Q&A, image generation, image analysis, and web-assisted writing on top.
 - [Ollama](https://ollama.com) running locally, with at least an embedding model:
   `ollama pull nomic-embed-text` (and any chat/vision models you want, e.g. `llava`).
 - *(Optional)* An OpenRouter API key for cloud models: <https://openrouter.ai/keys>
-- *(Optional)* A running SDXL image server for image generation.
+- *(Optional, for image generation)* An NVIDIA GPU with CUDA. Image generation uses the included `sdxl_server.py`, which downloads Stable Diffusion XL (~7 GB) on first launch.
 
 ## Setup
 
@@ -45,6 +45,14 @@ streamlit run loom.py
 ```
 
 Then open the URL Streamlit prints (usually <http://localhost:8501>).
+
+**Image generation (optional).** To use the image-generation tab, start the SDXL server in a separate terminal. It needs an NVIDIA GPU with CUDA:
+
+```bash
+python sdxl_server.py     # serves on http://localhost:5050
+```
+
+Loom reaches it at the address in `SDXL_BASE`.
 
 ## Configuration
 
